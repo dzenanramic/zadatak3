@@ -1,0 +1,110 @@
+body {
+  background-color: #f3ede5;
+  margin: 0;
+  overflow-x: hidden !important; /* Prevent horizontal scroll */
+}
+
+.swiper-container {
+  width: calc(100% - 64px);
+  margin-left: 64px;
+  margin-right: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 1440px) {
+  .swiper-container {
+    width: calc(1440px - 64px);
+    margin-right: calc((100% - 1440px) / 2);
+  }
+}
+
+.swiper-wrapper {
+  height: 585px;
+}
+
+.swiper-slide {
+  position: relative;
+  height: 585px;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 468px !important;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Custom navigation buttons */
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  position: absolute;
+  top: 315px !important;
+  width: 32px;
+  height: 32px;
+  background: #222222;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.swiper-button-prev-custom {
+  right: calc(100% - 96px);
+  transform: scaleX(-1);
+}
+
+.swiper-button-next-custom {
+  right: 40px;
+}
+
+/* Hide default navigation */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+}
+.swiper-toggle {
+  margin-bottom: 24px;
+}
+@media (max-width: 375px) {
+  .swiper-container {
+    width: calc(100% - 7px);
+    left: 7px;
+    margin-left: 0;
+    padding-right: 0;
+    top: 10%;
+  }
+
+  .swiper-wrapper {
+    height: 428px;
+  }
+
+  .swiper-slide {
+    width: 343px !important;
+    height: 428px !important;
+  }
+  .swiper-button-disabled {
+    display: none !important;
+  }
+  .swiper-button-prev-custom {
+    left: 33px; /* Position left outside container */
+    right: auto;
+    transform: scaleX(-1);
+    top: 245px !important;
+  }
+
+  .swiper-button-next-custom {
+    right: 40px; /* Position right outside container */
+    left: auto;
+    top: 245px !important;
+  }
+}
